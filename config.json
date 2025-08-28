@@ -1,0 +1,58 @@
+{
+    "image_size": [
+        800,
+        600
+    ],
+    "background_color": "#ffffff",
+    "quote_text": {
+        "font_family": "Lora",
+        "font_size": 32,
+        "max_width": 700,
+        "line_spacing": 10
+    },
+    "quote_highlight": {
+        "font_family": "Lora",
+        "font_size": 32,
+        "font_weight": "italic",
+        "color": "#ff0000"
+    },
+    "quote_normal": {
+        "color": "#2c3e50"
+    },
+    "attribution_section": {
+        "font_family": "Open Sans",
+        "font_size": 20,
+        "font_weight": "regular",
+        "color": "#95a5a6",
+        "max_width": 700,
+        "line_spacing": 5
+    },
+    "quote_part1": {
+        "font_family": "Lora",
+        "font_size": 32,
+        "font_weight": "regular",
+        "color": "#2c3e50",
+        "position": [
+            50,
+            50
+        ],
+        "max_width": 700,
+        "line_spacing": 10
+    },
+    "quote_part2": {
+        "font_family": "Lora",
+        "font_size": 32,
+        "font_weight": "italic",
+        "color": "#e74c3c",
+        "max_width": 700,
+        "line_spacing": 10
+    },
+    "quote_part3": {
+        "font_family": "Lora",
+        "font_size": 32,
+        "font_weight": "regular",
+        "color": "#7f8c8d",
+        "max_width": 700,
+        "line_spacing": 10
+    }
+}

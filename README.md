@@ -37,6 +37,50 @@ python3 TTQC.py --ntp --inky -o my_quote.png
 
 ## Installation
 
+### Virtual Environment (Recommended)
+
+#### macOS
+```bash
+# Set up virtual environment (macOS optimized)
+./venv_setup_macos.sh
+
+# Run TTQC
+./run.sh
+
+# Or activate manually
+source venv/bin/activate
+python TTQC.py
+deactivate
+```
+
+#### Linux/Raspberry Pi
+```bash
+# Set up virtual environment
+./venv_setup.sh
+
+# Run TTQC
+./run.sh
+
+# Or activate manually
+source venv/bin/activate
+python TTQC.py
+deactivate
+```
+
+#### Windows
+```bash
+# Set up virtual environment
+venv_setup.bat
+
+# Run TTQC
+run.bat
+
+# Or activate manually
+venv\Scripts\activate.bat
+python TTQC.py
+deactivate
+```
+
 ### Standard Installation
 ```bash
 pip3 install -r requirements.txt
@@ -82,35 +126,51 @@ The script uses `config.json` for styling configuration:
 ## File Structure
 
 - `TTQC.py`: Main script (flowing text version)
-- `TTQC_original.py`: Original separate-parts version
+- `TTQC_original.py`: Original separate-parts version (backup)
 - `TTQC_quotes.tsv`: Quote database
 - `config.json`: Configuration file
-- `requirements.txt`: Python dependencies
+- `requirements.txt`: Python dependencies (full version)
+- `requirements_macos.txt`: macOS-compatible dependencies
+- `venv_setup.sh`: Virtual environment setup (Linux/Raspberry Pi)
+- `venv_setup_macos.sh`: Virtual environment setup (macOS)
+- `venv_setup.bat`: Virtual environment setup (Windows)
+- `run.sh`: Run script (macOS/Linux)
+- `run.bat`: Run script (Windows)
 - `raspberry_pi_setup.sh`: Raspberry Pi setup script
 - `test_fonts_pi.py`: Font testing script
 - `test_inky.py`: Inky display testing script
 - `README_RaspberryPi.md`: Detailed Raspberry Pi guide
+- `.gitignore`: Git ignore file
 
 ## Examples
 
 ### Local Time
 ```bash
-python3 TTQC.py -o local_quote.png
+# Using virtual environment
+./run.sh -o local_quote.png
+
+# Or manually
+source venv/bin/activate
+python TTQC.py -o local_quote.png
+deactivate
 ```
 
 ### NTP Time with Custom Server
 ```bash
-python3 TTQC.py --ntp --ntp-server time.apple.com -o ntp_quote.png
+./run.sh --ntp --ntp-server time.apple.com -o ntp_quote.png
 ```
 
 ### Inky Display
 ```bash
-python3 TTQC.py --inky
+./run.sh --inky
 ```
 
 ### Automated Updates (Cron)
 ```bash
-# Update every hour
+# Update every hour (using virtual environment)
+0 * * * * cd /path/to/TTQC2 && ./run.sh --ntp --inky
+
+# Or without virtual environment
 0 * * * * cd /path/to/TTQC2 && python3 TTQC.py --ntp --inky
 ```
 

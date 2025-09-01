@@ -22,15 +22,22 @@ The program takes the three parts and reassembles the quote, but formats each pa
 
 ### 1. Install Dependencies
 
-To install TTQC, make sure Python 3 is installed, then clone this repository and move into the directory.
+To install TTQC, make sure Python 3 is installed, then clone this repository 
 
 ```bash
 # Install system dependencies
 sudo apt-get update
 sudo apt-get install -y python3-pip python3-pygame
 
-git clone TK
+git clone https://github.com/richardtheb/TTQC
 cd TTQC
+
+
+```
+
+Next, create the virtual environment that the program runs in, update PIP (the program that grabs other programs) and install all the other requirements,
+
+```bash
 # Create Virtual Environment
 python3 -m venv venv
 
@@ -39,13 +46,20 @@ pip install --upgrade pip
 
 # Install requirements
 pip install -r requirements.txt
+```
 
+Now we can activate the virtual environment and test the Inky Impressions screen
+
+```bash
 # Enter Virtual Environment
 source venv/bin/activate
 
 #Test the Inky Screen
 python stripes.py
+```
 
+Finally, let's run the clock program!
+```bash
 #Run the main program!
 python3 TTQC.py
 
@@ -92,7 +106,6 @@ python3 TTQC.py --inky --interval
 
 When running manually:
 - **Ctrl+C**: Stop the script
-- **Escape**: Exit fullscreen display (if supported)
 
 ## Configuration
 
@@ -110,29 +123,25 @@ To change how often the display updates, change the interval:
 python3 TTQC.py --inky --interval 120
 ```
 
-## Troubleshooting
-
-### Display Issues
-
-1. **No display**: Make sure you're running on a Pi with a display connected
-2. **Permission errors**: Run with sudo or ensure proper X11 permissions
-3. **Pygame errors**: Install pygame: `sudo apt-get install python3-pygame`
-
-### Service Issues
-
-1. **Service won't start**: Check logs: `sudo journalctl -u ttqc-display.service`
-2. **Permission denied**: Ensure the service file has correct paths and permissions
-3. **Display not found**: Verify DISPLAY environment variable is set correctly
-
-
-
 ## Files
 
 - `TTQC.py`: Main script with fullscreen display and minute-based updates
 - `requirements.txt`: Python dependencies
-- TTQC_quotes.tsv: The quotes in tabl delimited format, with a structure of Time, Quote_Time, Quote_Part1, Quote_Part3, Book, Author. (see the linked spreadsheet for more details. 
+- `TTQC_quotes.tsv`: The quotes in tab seperated format, with a structure of Time, Quote_Time, Quote_Part1, Quote_Part3, Book, Author. (see the linked spreadsheet for more details.
+- `config.json`: The configuration file that controls formatting, etc.
 
 ## Quotes
+- The quotes file is a tab seperated values file with the following columns:
+
+Time:         The time on HH:MM format  
+Time_Quote:   The quote section that describes the time, such as "08:43" or "eight forty-three" 
+Quote_Part1:  The part of the quote that precedes the time quote, such as "The clock read"
+Quote_Part2:  The part of the quote that follows the time quote, such as ". A cat barked in the distance"
+Book:         The title of the book
+Author:       The author of the book
+
+For more details, see the [spreadsheet I used to generate this file](https://docs.google.com/spreadsheets/d/19xWF9l6vWUVWZBSahX-jbBk1TR7CXe3ZIeYYlu96bjA/edit?usp=sharing). 
+
 
 
 ## Requirements

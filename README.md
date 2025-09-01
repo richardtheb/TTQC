@@ -52,7 +52,7 @@ dtoverlay=spi0-0cs
 
 It should look like this:
 
-![NANO screen](TK)
+![NANO screen](nano-screen1.jpg)
 
 Hit ctrl-X to quit and Y to save that change. Now we need to reboot the Pi to make the changes stick.
 

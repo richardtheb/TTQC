@@ -1,7 +1,8 @@
 # Tick Tock Quote Clock
 
-An overly complex literary clock for the Raspberry Pi Zero 2 W and the Pimoroni Inky Impressions display. Other literary quote clocks just primt out a quote. This one highlights the time part of the quote in RED!
-How? Magic! Well, no, more a bit of fiddling around. Workign from the list of quotes for the origional Guardian project, I slot the quotes into three parts: the first part, the time and the second part. 
+*Richard Baguley (with assistance from Cursor AI)*
+An overly complex literary clock for the Raspberry Pi Zero 2 W and the Pimoroni Inky Impressions display. Other literary quote clocks just print out a quote. This one highlights the time part of the quote in RED!
+How? Magic! Well, no, more a bit of fiddling around. Working from the list of quotes for the origional Guardian project, I sliced the quotes into three parts: the first part, the time and the second part. 
 So, this quote:
 
 >If Jill had been more used to adventures, she might have doubted the Owl’s word, but this never occurred to her; and in the exciting idea of a midnight escape she forgot her sleepiness.
@@ -14,7 +15,7 @@ Is split into this:
 
 >escape she forgot her sleepiness.
 
-The program takes the three parts and reassembles the quote, but formats each part differently. By default, the main text is black, but the quote time is in red. 
+The program takes the three parts and reassembles the quote, but formats each part differently, as copntrolled by the config.json file. By default, the main text is black, but the quote time is in red. 
 
 ## Installation
 
@@ -43,6 +44,9 @@ source venv/bin/activate
 
 #Test the Inky Screen
 python stripes.py
+
+#Run the main program!
+python3 TTQC.py
 
 ```
 

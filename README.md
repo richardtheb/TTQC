@@ -1,7 +1,7 @@
 # Tick Tock Quote Clock
 
 *Richard Baguley (with assistance from Cursor AI)*
-
+![clock screen](clock1.jpg)
 An overly complex literary clock for the Raspberry Pi Zero 2 W and the Pimoroni Inky Impressions display. Other literary quote clocks just print out a quote. This one highlights the time part of the quote in RED!
 How? Magic! Well, no, more a bit of fiddling around. Working from the list of quotes for the origional Guardian project, I sliced the quotes into three parts: the first part, the time and the second part. 
 So, this quote:
@@ -79,11 +79,7 @@ cd TTQC
 source venv/bin/activate
 python stripes.py
 ```
-Don'y worry about the messages: they are just for information. If that works, you should see a set of stripes on the Inky display, like this!
-
-![NANO screen](TK)
-
-If you don't see the stripes, check out the [Pimoroni troubleshooting guide](https://github.com/pimoroni/inky). 
+Don'y worry about the messages: they are just for information. If that works, you should see a set of stripes on the Inky display. If you don't see the stripes, check out the [Pimoroni troubleshooting guide](https://github.com/pimoroni/inky). 
 
 
 Finally, let's run the clock program!

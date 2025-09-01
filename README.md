@@ -41,6 +41,9 @@ Next, create the virtual environment that the program runs in, update PIP (the p
 # Create Virtual Environment
 python3 -m venv venv
 
+# Enter Virtual Environment
+source venv/bin/activate
+
 # Upgrade pip
 pip install --upgrade pip
 
@@ -48,12 +51,9 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Now we can activate the virtual environment and test the Inky Impressions screen
+Now we can test the Inky Impressions screen
 
 ```bash
-# Enter Virtual Environment
-source venv/bin/activate
-
 #Test the Inky Screen
 python stripes.py
 ```

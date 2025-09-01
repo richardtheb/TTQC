@@ -1,0 +1,29 @@
+{
+    "image_size": [
+        640,
+        400
+    ],
+    "background_color": [255, 255, 255],
+    "quote_text": {
+        "font_family": "Lora",
+        "font_size": 32,
+        "line_spacing": 8,
+        "max_width": 600
+    },
+    "quote_normal": {
+        "color": [0, 0, 0]
+    },
+    "quote_highlight": {
+        "font_family": "Lora",
+        "font_size": 38,
+        "font_weight": "italic",
+        "color": [255, 0, 0]
+    },
+    "attribution_section": {
+        "font_family": "Open Sans",
+        "font_size": 32,
+        "font_weight": "regular",
+        "line_spacing": 5,
+        "color": [0, 128, 0]
+    }
+}

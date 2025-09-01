@@ -1,0 +1,5 @@
+Pillow>=9.0.0
+ntplib>=0.4.0
+requests>=2.25.0
+inky>=1.4.0
+pygame>=2.0.0

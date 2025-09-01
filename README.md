@@ -25,45 +25,77 @@ The program takes the three parts and reassembles the quote, but formats each pa
 To install TTQC, make sure Python 3 is installed, then clone this repository 
 
 ```bash
-# Install system dependencies
 sudo apt-get update
 sudo apt-get install -y python3-pip python3-pygame
-
 git clone https://github.com/richardtheb/TTQC
 cd TTQC
-
-
 ```
+
+We will also need to make a couple of small changes to the system to enable the Inky display.
+
+```bash
+sudo raspi-config nonint do_i2c 0
+sudo raspi-config nonint do_spi 0
+```
+
+Next, we will need to edit a system file to change the way part of it works:
+
+```bash
+sudo nano /etc/system/config.txt
+```
+
+Scroll to the bottom of the file, and add this line to it.
+
+```bash
+dtoverlay=spi0-0cs
+```
+
+It should look like this:
+
+![NANO screen](TK)
+
+Hit ctrl-X to quit and Y to save that change. Now we need to reboot the Pi to make the changes stick.
+
+
+```bash
+sudo restart -r now
+```
+
 
 Next, create the virtual environment that the program runs in, update PIP (the program that grabs other programs) and install all the other requirements,
 
 ```bash
-# Create Virtual Environment
+cd TTQC
 python3 -m venv venv
-
-# Enter Virtual Environment
 source venv/bin/activate
-
-# Upgrade pip
 pip install --upgrade pip
-
-# Install requirements
 pip install -r requirements.txt
 ```
 
 Now we can test the Inky Impressions screen
 
 ```bash
-#Test the Inky Screen
+cd TTQC
+source venv/bin/activate
 python stripes.py
 ```
+Don'y worry about the messages: they are just for information. If that works, you should see a set of stripes on the Inky display, like this!
+
+![NANO screen](TK)
+
+If you don't see the stripes, check out the [Pimoroni troubleshooting guide](https://github.com/pimoroni/inky). 
+
 
 Finally, let's run the clock program!
 ```bash
-#Run the main program!
-python3 TTQC.py
-
+python3 TTQC.py --inky
 ```
+That will just run once and exit. When you are ready, you can make it run continuously and update every minute by adding the --interval option. 
+
+```bash
+python3 TTQC.py --inky --interval
+```
+
 
 ### 2. Quick Start
 
@@ -74,7 +106,7 @@ python3 TTQC.py --Inky
 
 **Option B: Continuous display (updates at the top of each minute)**
 ```bash
-python3 TTQC.py --Inky --interval
+python3 TTQC.py --inky --interval
 ```
 
 ## Usage

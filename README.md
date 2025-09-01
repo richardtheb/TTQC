@@ -1,6 +1,7 @@
 # Tick Tock Quote Clock
 
 *Richard Baguley (with assistance from Cursor AI)*
+
 An overly complex literary clock for the Raspberry Pi Zero 2 W and the Pimoroni Inky Impressions display. Other literary quote clocks just print out a quote. This one highlights the time part of the quote in RED!
 How? Magic! Well, no, more a bit of fiddling around. Working from the list of quotes for the origional Guardian project, I sliced the quotes into three parts: the first part, the time and the second part. 
 So, this quote:
